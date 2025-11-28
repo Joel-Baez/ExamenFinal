@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard - Gestión de Vuelos y Reservas</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="dashboard-body">
+
+    <header class="dashboard-header">
+        <div class="header-content">
+            <div class="header-left">
+                <h1 class="dashboard-title">Sistema de Gestión de Vuelos</h1>
+                <p class="dashboard-subtitle">Administración completa del sistema</p>
+            </div>
+
+            <div class="header-right">
+                <span id="userRole" class="user-role"></span>
+                <button id="logoutBtn" class="btn-logout">Cerrar sesión</button>
+            </div>
+        </div>
+    </header>
+
+    <nav id="dashboardNav" class="dashboard-nav"></nav>
+
+    <main class="dashboard-main">
+        <section id="content" class="content-area">
+        </section>
+    </main>
+
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
