@@ -2,34 +2,34 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard - Gestión de Vuelos y Reservas</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Gestión de Vuelos</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 
-<body class="dashboard-body">
+<body class="airline-dashboard">
 
-    <header class="dashboard-header">
-        <div class="header-content">
-            <div class="header-left">
-                <h1 class="dashboard-title">Sistema de Gestión de Vuelos</h1>
-                <p class="dashboard-subtitle">Administración completa del sistema</p>
-            </div>
-
-            <div class="header-right">
-                <span id="userRole" class="user-role"></span>
-                <button id="logoutBtn" class="btn-logout">Cerrar sesión</button>
-            </div>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>AirControl</h2>
+            <p id="userRole"></p>
         </div>
-    </header>
 
-    <nav id="dashboardNav" class="dashboard-nav"></nav>
+        <nav class="sidebar-menu" id="dashboardNav"></nav>
 
-    <main class="dashboard-main">
-        <section id="content" class="content-area">
-        </section>
+        <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
+    </aside>
+
+    <main class="main-content">
+        <header class="main-header">
+            <h1 id="sectionTitle">Panel</h1>
+        </header>
+
+        <section id="content" class="content-section"></section>
     </main>
 
-    <script type="module" src="js/dashboard.js"></script>
+    <script type="module" src="../js/dashboard.js"></script>
+
 </body>
 </html>

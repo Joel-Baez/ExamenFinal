@@ -98,7 +98,6 @@ function closeModal(modal) {
     setTimeout(() => modal.remove(), 250);
 }
 
-// ================== INIT ==================
 async function init() {
     const token = getToken();
     if (!token) {
@@ -173,7 +172,6 @@ function loadSection(section) {
     }
 }
 
-// ========== USUARIOS ==========
 async function loadUsuarios() {
     setContent(`
         <div class="section-header">
@@ -334,7 +332,6 @@ async function loadUserData(userId, modal) {
     }
 }
 
-// ========== NAVES ==========
 async function loadNaves() {
     setContent(`
         <div class="section-header">
@@ -996,7 +993,6 @@ async function cancelReservation(reservationId) {
     }
 }
 
-// ========== LOGOUT ==========
 async function logout() {
     try {
         await fetchAPI(`${API_USERS}/logout`, { method: 'POST' });

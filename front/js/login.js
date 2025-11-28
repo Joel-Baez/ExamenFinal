@@ -64,7 +64,8 @@ async function handleLogin(e) {
 
             document.body.classList.add('login-success');
             setTimeout(() => {
-                window.location.href = '/Parcial_Final_40/front/gestor/dashboard.html';
+                window.location.href = 'dashboard.html';
+
             }, 400);
         } else {
             showError(data.error || 'Credenciales incorrectas');

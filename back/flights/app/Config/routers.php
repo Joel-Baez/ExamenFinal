@@ -4,22 +4,24 @@ namespace App\Config;
 use Slim\App;
 use App\Controllers\AirlineController;
 
-return static function (App $app): void {
-    $controller = new AirlineController();
+return function(App $app) {
+    
+    $ac = new AirlineController();
 
-    $app->group('', function (App $app) use ($controller) {
-        $app->post('/naves', [$controller, 'createNave']);
-        $app->get('/naves', [$controller, 'listNaves']);
-        $app->put('/naves/{id}', [$controller, 'updateNave']);
-        $app->delete('/naves/{id}', [$controller, 'deleteNave']);
+    // Naves
+    $app->post('/naves', [$ac, 'createNave']);
+    $app->get('/naves', [$ac, 'listNaves']);
+    $app->put('/naves/{id}', [$ac, 'updateNave']);
+    $app->delete('/naves/{id}', [$ac, 'deleteNave']);
 
-        $app->post('/flights', [$controller, 'createFlight']);
-        $app->get('/flights', [$controller, 'listFlights']);
-        $app->put('/flights/{id}', [$controller, 'updateFlight']);
-        $app->delete('/flights/{id}', [$controller, 'deleteFlight']);
+    // Vuelos
+    $app->post('/flights', [$ac, 'createFlight']);
+    $app->get('/flights', [$ac, 'listFlights']);
+    $app->put('/flights/{id}', [$ac, 'updateFlight']);
+    $app->delete('/flights/{id}', [$ac, 'deleteFlight']);
 
-        $app->post('/reservations', [$controller, 'createReservation']);
-        $app->get('/reservations', [$controller, 'listReservations']);
-        $app->put('/reservations/{id}/cancel', [$controller, 'cancelReservation']);
-    });
+    // Reservas
+    $app->post('/reservations', [$ac, 'createReservation']);
+    $app->get('/reservations', [$ac, 'listReservations']);
+    $app->put('/reservations/{id}/cancel', [$ac, 'cancelReservation']);
 };
